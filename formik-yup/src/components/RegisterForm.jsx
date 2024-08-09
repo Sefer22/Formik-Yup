@@ -7,14 +7,15 @@ function RegisterForm() {
           email: '',
           age:'',
           password:'',
-          confirmPassword:''
+          confirmPassword:'',
+          term:''
         },
       });
-      console.log(formik);
+
   return (
     <div>
         <form>
-            <div>
+            <div className='inputDiv'>
             <label>Email</label>
             <input type="text" id="email" 
             placeholder='Enter email' 
@@ -22,7 +23,7 @@ function RegisterForm() {
             onChange={handleChange} />
             </div>
 
-            <div>
+            <div className='inputDiv'>
             <label>Age</label>
             <input type="number" id="age" 
             placeholder='Enter age' 
@@ -30,7 +31,7 @@ function RegisterForm() {
             onChange={handleChange} />
             </div>
 
-            <div>
+            <div className='inputDiv'>
             <label>Password</label>
             <input type="password" id="password" 
             placeholder='Enter password' 
@@ -38,12 +39,19 @@ function RegisterForm() {
             onChange={handleChange} />
             </div>
 
-            <div>
+            <div className='inputDiv'>
             <label>Confirm password</label>
             <input type="password" id="confirmPassword" 
             placeholder='Enter password again' 
             value={values.confirmPassword} 
             onChange={handleChange} />
+            </div>
+
+            <div className='inputDiv'>
+            <input type="checkbox" id="term" 
+            value={values.term} 
+            onChange={handleChange} />
+            <label>Accept all cookies</label>
             </div>
         </form>
       
