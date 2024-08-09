@@ -48,11 +48,21 @@ function RegisterForm() {
             </div>
 
             <div className='inputDiv'>
-            <input type="checkbox" id="term" 
-            value={values.term} 
-            onChange={handleChange} />
-            <label>Accept all cookies</label>
+                <div style={{display:'flex',
+                    flexDirection:'row',
+                    alignItems:'flex-start',
+                    justifyContent:'flex-start'
+                }}>
+                     <input style={{width:'20px',
+                       height:'12px' 
+                     }} type="checkbox" id="term" 
+                     value={values.term} 
+                     onChange={handleChange} />
+                     <label>Accept all cookies</label>
+                </div>
             </div>
+
+            <button className='button'>Submit</button>
         </form>
       
     </div>
