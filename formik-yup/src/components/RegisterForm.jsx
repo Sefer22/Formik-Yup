@@ -1,5 +1,6 @@
 import React from 'react'
 import { useFormik } from 'formik';
+import { registerFormSchema } from '../schemas/RegisterFormSchema';
 
 function RegisterForm() {
     const {values,errors,handleChange,handleSubmit} = useFormik({
@@ -10,6 +11,7 @@ function RegisterForm() {
           confirmPassword:'',
           term:''
         },
+        validationSchema:registerFormSchema
       });
 
   return (
