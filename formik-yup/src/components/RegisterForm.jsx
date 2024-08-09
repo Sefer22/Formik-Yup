@@ -3,6 +3,13 @@ import { useFormik } from 'formik';
 import { registerFormSchema } from '../schemas/RegisterFormSchema';
 
 function RegisterForm() {
+
+    const submit = (values,action)=>{
+      setTimeout(()=>{
+        action.resetForm();
+      },2000)
+    }
+
     const {values,errors,handleChange,handleSubmit} = useFormik({
         initialValues: {
           email: '',
@@ -11,7 +18,8 @@ function RegisterForm() {
           confirmPassword:'',
           term:''
         },
-        validationSchema:registerFormSchema
+        validationSchema:registerFormSchema,
+        onSubmit : submit
       });
 
   return (
@@ -65,8 +73,8 @@ function RegisterForm() {
                      value={values.term} 
                      onChange={handleChange} />
                      <label>Accept all cookies</label>
-                     {errors.term && <p className='input-error'>{errors.term}</p>}
                 </div>
+                {errors.term && <p className='input-error'>{errors.term}</p>}
             </div>
 
             <button type='submit' className='button'>Submit</button>
