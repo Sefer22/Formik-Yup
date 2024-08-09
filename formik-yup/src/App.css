@@ -41,3 +41,8 @@ input{
   border: none;
   border-radius: 3px;
 }
+
+.input-error {
+  font-size: 15px;
+  color: rgb(188,73,73);
+}

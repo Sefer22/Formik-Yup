@@ -16,13 +16,14 @@ function RegisterForm() {
 
   return (
     <div>
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className='inputDiv'>
             <label>Email</label>
             <input type="text" id="email" 
             placeholder='Enter email' 
             value={values.email} 
             onChange={handleChange} />
+            {errors.email && <p className='input-error'>{errors.email}</p>}
             </div>
 
             <div className='inputDiv'>
@@ -31,6 +32,7 @@ function RegisterForm() {
             placeholder='Enter age' 
             value={values.age} 
             onChange={handleChange} />
+            {errors.age && <p className='input-error'>{errors.age}</p>}
             </div>
 
             <div className='inputDiv'>
@@ -39,6 +41,7 @@ function RegisterForm() {
             placeholder='Enter password' 
             value={values.password} 
             onChange={handleChange} />
+            {errors.password && <p className='input-error'>{errors.password}</p>}
             </div>
 
             <div className='inputDiv'>
@@ -47,6 +50,7 @@ function RegisterForm() {
             placeholder='Enter password again' 
             value={values.confirmPassword} 
             onChange={handleChange} />
+            {errors.confirmPassword && <p className='input-error'>{errors.confirmPassword}</p>}
             </div>
 
             <div className='inputDiv'>
@@ -61,10 +65,11 @@ function RegisterForm() {
                      value={values.term} 
                      onChange={handleChange} />
                      <label>Accept all cookies</label>
+                     {errors.term && <p className='input-error'>{errors.term}</p>}
                 </div>
             </div>
 
-            <button className='button'>Submit</button>
+            <button type='submit' className='button'>Submit</button>
         </form>
       
     </div>
