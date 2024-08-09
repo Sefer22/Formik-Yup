@@ -6,7 +6,8 @@ function RegisterForm() {
         initialValues: {
           email: '',
           age:'',
-          password:''
+          password:'',
+          confirmPassword:''
         },
       });
       console.log(formik);
@@ -34,6 +35,14 @@ function RegisterForm() {
             <input type="password" id="password" 
             placeholder='Enter password' 
             value={values.password} 
+            onChange={handleChange} />
+            </div>
+
+            <div>
+            <label>Confirm password</label>
+            <input type="password" id="confirmPassword" 
+            placeholder='Enter password again' 
+            value={values.confirmPassword} 
             onChange={handleChange} />
             </div>
         </form>
